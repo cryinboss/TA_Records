@@ -3,7 +3,7 @@
 ## 1.0 节点基础
 **材质工作流**
 高度图是一切的起点，用来生成法线贴图，环境遮蔽贴图，粗糙度贴图等，然后生成Albedo基础颜色图，进行各种材质的混合，得到最终的输出。
-![Alt text](sdpics\workflow_material1.jpg)
+<img src="sdpics\workflow_material1.jpg" alt="Alt text" />
 
 - 右键包链接3D场景，可以把预览界面的模型换成自己的建模。
 - **Tessellation Shader:**
@@ -37,10 +37,10 @@ Rotation:旋转随机性，可使用map进行调节
 Height:高度随机性，可使用map进行调节
 Masking:遮罩控制数量和范围，可使用map进行调节
 Shape scale:
-![Alt text](sdpics\m_shapes-1.jpg)
+<img src="sdpics\m_shapes-1.jpg" alt="Alt text" />
 
 - **Small Shapes**:
-![Alt text](sdpics\s_shapes-1.jpg)
+<img src="sdpics\s_shapes-1.jpg" alt="Alt text" />
 是中级细节进一步的细化
 
 ## 1.2 节点搭配与使用
@@ -62,32 +62,32 @@ Expose as new graph input:将某一属性从局部区域提出来放入整个gra
 output:添加output节点，该材质暴露给外界使用。
 
 ## 1.3 Roughness map制作
-![Alt text](sdpics\roughness-1.jpg)
+<img src="sdpics\roughness-1.jpg" alt="Alt text" />
 高度图生成AO图，反转后调整明暗强度，通过混合其他效果图再Histogram Range平均得到一张粗糙度贴图。
 
 ## 1.4 颜色制作
 1. Albedo基础色
 normal->curvature smooth->blend其他纹理->gradient Map拾取颜色，example as below:
-![Alt text](sdpics\ground color.jpg)
+<img src="sdpics\ground color.jpg" alt="Alt text" />
 2. 对于每一级物体：**shape splatter blend color**
 输入：
 Background Color：Albedo基础色
 Pattern：模式，与形状数量对应，gradient map 连接，纹理细节可以通过各种噪音纹理进行blend得到
 Splatter Data1&2：与Shape Splatter的相应接口连接，传递分布属性的。
 example as below:
-![Alt text](sdpics\marble color.jpg)
+<img src="sdpics\marble color.jpg" alt="Alt text" />
 对于自身已经有细节纹理的物体，在生成gradient map时，可以直接使用形状shape，如下图实例twig树枝
 <img src="sdpics\twig.jpg" alt="Alt text" style="margin-left:20%"/>
 采取一形多用策略：(左侧全部都连接原shape)
-![Alt text](sdpics\twig_color.jpg)![Alt text](sdpics\dirt_part.jpg)如此便得到了具有纹理细节的物体颜色。
+<img src="sdpics\twig_color.jpg" alt="Alt text" /><img src="sdpics\dirt_part.jpg" alt="Alt text" />如此便得到了具有纹理细节的物体颜色。
 3. 材质混合，通常在使用base material时需要用到，用来生成最终需要的贴图，包括**Base color,Normal,Roughness,Height,Ambient occlusion**,这里需要一张grayscale mask，灰度遮罩，**遮罩强度和原生颜色保留度成反比**。
-![Alt text](sdpics\dirt_blend.jpg)
+<img src="sdpics\dirt_blend.jpg" alt="Alt text" />
 在实例中，我们混合了雪和水材质，最终得到如下效果：
-![Alt text](sdpics\ground_basecolor.jpg)![Alt text](sdpics\dirt_final.jpg)
+<img src="sdpics\ground_basecolor.jpg" alt="Alt text" /><img src="sdpics\dirt_final.jpg" alt="Alt text" />
 
 ## 2.0 练习
 ### 2.0.0 科幻宇宙甲
-![Alt text](sdpics\armorbox.jpg)
+<img src="sdpics\armorbox.jpg" alt="Alt text" />
 
 **要点**
 
@@ -99,9 +99,9 @@ example as below:
 - emissive自发光节点需要手动导入
 - noise贴图产生锈斑纹理
 ### 2.0.1 熔岩地面
-![Alt text](sdpics\lava0.jpg)
+<img src="sdpics\lava0.jpg" alt="Alt text" />
 
-![Alt text](sdpics\lavaball.jpg)
+<img src="sdpics\lavaball.jpg" alt="Alt text" />
 
 **要点**
 
@@ -111,8 +111,8 @@ example as below:
 - 地面纹理决定岩浆纹理
 
 ### 2.0.2 幸运草丛
-![Alt text](sdpics\clover_ground0.jpg)
-![Alt text](sdpics\clover_ground.jpg)
+<img src="sdpics\clover_ground0.jpg" alt="Alt text" />
+<img src="sdpics\clover_ground.jpg" alt="Alt text" />
 
 **要点**
 
@@ -125,9 +125,9 @@ example as below:
 
 ### 2.0.3 砖石纹理
 
-![baysalt_blcok](sdpics\baysalt_blcok.jpg)\
+<img src="sdpics\baysalt_blcok.jpg" alt="baysalt_blcok" />\
 
-![baysalt_block0](sdpics\baysalt_block0.jpg)\
+<img src="sdpics\baysalt_block0.jpg" alt="baysalt_block0" />\
 
 **要点**
 
@@ -211,7 +211,7 @@ example as below:
 
 ### 2.0.9 沁槐沙漠
 
-![stylized_sand](sdpics\stylized_sand.jpg)
+<img src="sdpics\stylized_sand.jpg" alt="stylized_sand" />
 
 要点：
 
@@ -224,7 +224,7 @@ example as below:
 
 ### 2.0.10 闪耀水晶
 
-![shing_crystal](sdpics\shing_crystal.jpg)
+<img src="sdpics\shing_crystal.jpg" alt="shing_crystal" />
 
 要点：
 
@@ -235,7 +235,7 @@ example as below:
 
 ### 2.0.11 老树盘根
 
-![roots](sdpics\roots.jpg)
+<img src="sdpics\roots.jpg" alt="roots" />
 
 要点：
 
@@ -243,7 +243,7 @@ example as below:
 
 ### 2.0.12 图腾石柱
 
-![saman_graph](sdpics\saman_graph.jpg)
+<img src="sdpics\saman_graph.jpg" alt="saman_graph" />
 
 要点：
 
@@ -255,11 +255,11 @@ example as below:
 
 ### 2.0.13 公园石砖路*
 
-![image-20231210202456510](sdpics\02.jpg)
+<img src="sdpics\02.jpg" alt="image-20231210202456510" />
 
 ### 2.0.14 燕戈沙垣
 
-![image-20231213132920613](sdpics\03.jpg)
+<img src="sdpics\03.jpg" alt="image-20231213132920613" />
 
 要点：
 
@@ -271,7 +271,7 @@ example as below:
 
 ### 2.0.15 巢木苔穴
 
-![image-20231213133959131](sdpics\04.png)
+<img src="sdpics\04.png" alt="image-20231213133959131" />
 
 要点：
 
@@ -281,7 +281,7 @@ example as below:
 
 ### 2.0.16 旧造物牢笼
 
-![image-20231215191419301](sdpics\05.png)
+<img src="sdpics\05.png" alt="image-20231215191419301" />
 
 要点：
 
@@ -293,7 +293,7 @@ example as below:
 
 ### 2.0.17 皑皑雪崖
 
-![image-20231216204519011](sdpics\06.png)
+<img src="sdpics\06.png" alt="image-20231216204519011" />
 
 要点：
 
@@ -305,7 +305,7 @@ example as below:
 
 ### 2.0.18 异色漩涡
 
-![image-20231218135655915](sdpics\07.png)
+<img src="sdpics\07.png" alt="image-20231218135655915" />
 
 要点：
 
@@ -353,9 +353,9 @@ example as below:
 
 - flood fill系列的用法复习
 
-![image-20240116155454334](sdpics\flood_fill_inital.png)
+<img src="sdpics\flood_fill_inital.png" alt="image-20240116155454334" />
 
-![image-20240116155227543](sdpics\flood_fill_edge_corruption.png)
+<img src="sdpics\flood_fill_edge_corruption.png" alt="image-20240116155227543" />
 
 - 之前制作波浪纹理使用的是：**wave form+tile sampler +directional warp**，本练习中就地取材，四个石块tile sampler旋转45°，non-uniform blur+2 directional warp+ warp得到，更柔和可以利用normal + curvature系列调整边缘。
 
@@ -466,7 +466,7 @@ wave + tile sampler制作一节，wave形成绳子每一根线的纹理，得到
 
 **要点：**
 
-![image-20240313202441649](sdpics\helper15.png)
+<img src="sdpics\helper15.png" alt="image-20240313202441649" />
 
 ### 2.1.9 森林环境地面
 
@@ -474,29 +474,29 @@ wave + tile sampler制作一节，wave形成绳子每一根线的纹理，得到
 
 项目结构
 
-![image-20240419102347034](sdpics\38.png)
+<img src="sdpics\38.png" alt="image-20240419102347034" />
 
 
 
 岩石侵蚀新做法：
 
-![image-20240415190415165](sdpics\26.png)
+<img src="sdpics\26.png" alt="image-20240415190415165" />
 
 pyrimad做基底的Tile Sampler，使用Non Uniform Direction Warp制作蚀刻
 
-![image-20240415190556860](sdpics\27.png)
+<img src="sdpics\27.png" alt="image-20240415190556860" />
 
 提取shadow后量化灰度图，使用edge detect+bevel+slope blur继续雕刻边缘。
 
-![image-20240415190814414](sdpics\28.png)
+<img src="sdpics\28.png" alt="image-20240415190814414" />
 
 和原图结合后再通过multiply叠加到石头原图上，得到类似如下的侵蚀效果。
 
-![image-20240415190928014](sdpics\29.png)
+<img src="sdpics\29.png" alt="image-20240415190928014" />
 
 第二级的石头侵蚀：
 
-![image-20240415191033609](sdpics\30.png)
+<img src="sdpics\30.png" alt="image-20240415191033609" />
 
 #### 2.1.9.2 散布的植被
 
@@ -552,7 +552,7 @@ Curvature Smooth + Curvature Sobel + Gradient Map 制作树枝颜色
 
 第二种的主要思想是Directional Warp后的wave去切割叶片。再去splatter circular，其余处理手法和第一种蕨类植被一致。在着色时，叶片边缘捎带点黄色或比所选颜色更浅的颜色。
 
-![image-20240419103412729](sdpics\44.png)
+<img src="sdpics\44.png" alt="image-20240419103412729" />
 
 #### 2.1.9.3 Final Result
 
@@ -653,13 +653,13 @@ Curvature Smooth + Curvature Sobel + Gradient Map 制作树枝颜色
 ## 3.0 IDEA
 
 ### 3.1.0 少儿频道标志
-![Alt text](sdpics\00.jpg)
+<img src="sdpics\00.jpg" alt="Alt text" />
 Polygon1:
 ![Alt text](O:\term9\notes\notes\sdpics\01.jpg)
 
 ### 3.1.1 皮革面料
 
-![image-20231218140036158](sdpics\s_shapes-2.jpg)
+<img src="sdpics\s_shapes-2.jpg" alt="image-20231218140036158" />
 
 该方法可以表现出皮革因拉扯产生的交界处反光。
 

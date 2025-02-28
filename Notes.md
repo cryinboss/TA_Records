@@ -2,9 +2,9 @@
 
 ## RayMarching体积云
 
-![63](pics\1.png)
+<img src="pics\1.png" alt="63" />
 
-![62](pics\2.png)
+<img src="pics\2.png" alt="62" />
 
 ### Ray-Marching 体积云 Ⅰ- Frame
 
@@ -429,7 +429,7 @@ half3 Density = exp(-totalDensity * _Absorption * lcolor)
 
 ## FFT 海洋
 
-![98](pics\3.png)
+<img src="pics\3.png" alt="98" />
 
 对于水平位置$\bold x=(x,z)$，定义其高度$height\quad h(\bold x,t)$
 $$
@@ -1111,9 +1111,9 @@ void TextureGenerationNormalBubbles(uint3 id: SV_DispatchThreadID)
 
 
 
-![NoiseType3](pics\4.png)
+<img src="pics\4.png" alt="NoiseType3" />
 
-![00](pics\5.png)
+<img src="pics\5.png" alt="00" />
 
 ![NoiseType2](pics\6.png)
 
@@ -1174,9 +1174,10 @@ float noise (in float2 _st) {
 ```
 
 <center>
-    <img src="shaderpics\normalnoise.png" alt="normalnoise" style="zoom:33%;" />
-    <img src="shaderpics\normalnoise_warp.png" alt="normalnoise_warp" style="zoom:33%;" />
+    <img src="pics\normalnoise.png" alt="normalnoise" style="zoom:33%;" />
+    <img src="pics\normalnoise_warp.png" alt="normalnoise_warp" style="zoom:33%;" />
 </center>
+
 
 
 
@@ -1205,7 +1206,7 @@ perlin噪声的关键环节，不固定点的颜色，而是固定点的**梯度
 1.定义一个晶格结构，每个晶格的顶点有一个“伪随机”的梯度向量；
 2.输入一个点，找到和它相邻的那些晶格顶点，计算该点到各个晶格顶点的距离向量，再分别与顶点上的梯度向量做点乘，得到个点乘结果。
 3.使用缓和曲线（ease curves）来计算它们的权重和
-![perlin](pics/perlin.png)
+<img src="pics/perlin.png" alt="perlin" />
 
 具体实现如下：
 
@@ -1392,7 +1393,7 @@ Pink Noise: $H=0,G=1$
 
 Brown Noise: $H=0.5,G=\frac{\sqrt(2)}{2}$
 
-![dbperOctaves](pics/dbperOctaves.png)
+<img src="pics/dbperOctaves.png" alt="dbperOctaves" />
 
 -9dB/Oct 的噪音图更能模拟出自然界中的分型，如山脉，云朵，海面。
 
@@ -1645,7 +1646,7 @@ col = col*(1.-aur.a) + aur.rgb;//基本等同于col=aur.rgb
        <img src="pics\05.png" alt="05" style="zoom:53.5%;" />
        <img src="pics\06.png" alt="06" style="zoom:50%;" />
    </center>
-
+   
    
 
 
@@ -1710,7 +1711,7 @@ Culling：区域剔除
 
 空间选择问题：与法线映射一样，选择在切线空间中进行能够存储相对位移信息，泛用性和复用性更强；由于切线向量和副切线向量指向与表面纹理坐标相同的方向，我们可以取$\vec{P} $​​ 的x和y分量作为纹理坐标偏移，而与曲面的方向无关。
 
-![parallax_mapping_depth](pics\11.png)
+<img src="pics\11.png" alt="parallax_mapping_depth" />
 
 ```glsl
 vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
@@ -1725,7 +1726,7 @@ vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
 
 当视图矢量接近表面的水平线时，高度变化较小会导致纹理坐标偏移较大。近似失败，因为检索到的新位置与原始曲面位置几乎没有高度相关性。
 
-![image-20240227164555075](pics\12.png)
+<img src="pics\12.png" alt="image-20240227164555075" />
 
 灰色向量指示了实际上步进的距离，黑色向量指示了用高度去限制偏移大小的结果。
 
@@ -1739,7 +1740,7 @@ Steps:
 
 划分等高线，若当前层的深度大于采样深度（高度图），停止检查返回结果。
 
-![parallax_mapping_steep_parallax_mapping_diagram](pics\13.png)
+<img src="pics\13.png" alt="parallax_mapping_steep_parallax_mapping_diagram" />
 
 在上图中，原采样点$T_{0}$ ,偏移后的纹理坐标为$T_{3}$​
 
@@ -1830,7 +1831,7 @@ return miduv;
 
 对于最后的查找上下界，使用先采样深度再插值的方法得到最终的深度偏移。
 
-![parallax_mapping_parallax_occlusion_mapping_diagram](pics\14.png)
+<img src="pics\14.png" alt="parallax_mapping_parallax_occlusion_mapping_diagram" />
 
 将线性插值的权重建立在**曲面的高度**与**两个层的深度层值**之间的**距离**上。
 
@@ -1969,7 +1970,7 @@ _TessellationUniform("Tessellation Uniform", Range(1, 64)) = 1
 //决定细分程度
 ```
 
-![image-20240305140045072](pics\grass00.png)
+<img src="pics\grass00.png" alt="image-20240305140045072" />
 
 **添加风元素**
 
@@ -2032,7 +2033,7 @@ for(……){
 }
 ```
 
-![image-20240305145522396](pics/grass-1.png)
+<img src="pics/grass-1.png" alt="image-20240305145522396" />
 
 **添加阴影处理pass**
 

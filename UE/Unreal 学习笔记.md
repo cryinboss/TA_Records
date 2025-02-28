@@ -26,7 +26,7 @@
 
 2. 新建RenderTargetTexture, 用来获取场景捕获组件得到的图像信息
 
-![image-20231214143552400](uepics\02.png)
+<img src="uepics\02.png" alt="image-20231214143552400" />
 
 3. 使用RenderTargetTexture创建材质，着色模型为无光照，并设置屏幕对齐uv坐标
 
@@ -38,17 +38,17 @@
 4. 将材质赋给portal的静态网格体平面并取消平面的碰撞阻挡预设为“OverlapOnlyPawn”。
 5. 编写传送逻辑，本质为带时延检测的Set Actor Location
 
-![image-20231214144349648](uepics\05.png)
+<img src="uepics\05.png" alt="image-20231214144349648" />
 
 6. 控制RenderTargetTexture随相机而变动
 
-![image-20231214144857212](uepics\06.png)
+<img src="uepics\06.png" alt="image-20231214144857212" />
 
 7. 如果传送门不是前后对应，需要重新生成平面材质，因为RenderTarget已经改变了（所以一定要注意门的朝向），RenderTarget是实时改变的！材质实例也会实时改变！
 
 ## 2023/12/19 PCG入门1
 
-1. 打开PCG插件![image-20231219160651107](uepics\07.png)
+1. 打开PCG插件<img src="uepics\07.png" alt="image-20231219160651107" />
 
 2. 创建PCG图表，初始Input和Output。
 3. 添加节点表面采样器，用来确定程序化生成表面（一般是某个地形）
@@ -56,11 +56,11 @@
 5. 添加点变换，投影变化，密度过滤器，噪音，初步生成分布图
 6. 添加静态网格体生成器，选择需要使用的Static mesh和材质，进行程序化生成
 
-![image-20231220153227290](uepics\08.jpg)
+<img src="uepics\08.jpg" alt="image-20231220153227290" />
 
-![image-20231219163030884](uepics\10.png)
+<img src="uepics\10.png" alt="image-20231219163030884" />
 
-![image-20231219162945330](uepics\09.png)
+<img src="uepics\09.png" alt="image-20231219162945330" />
 
 ## 2023/12/20 PCG入门2
 
@@ -72,11 +72,11 @@ PCG蓝图这里，“获取样条线数”据过滤选择所有世界Actor的话
 
 使用“距离”可以利用内部和样条线上的距离差异来固定密度衰减距离，“边界修改器”用来控制产生点的大小，用于后续subtract产生路径的操作（“difference”函数，密度函数这里要改成“二进制”）
 
-![image-20231220154444124](uepics\11.png)
+<img src="uepics\11.png" alt="image-20231220154444124" />
 
 产生的程序化区域可以通过“投影”投射到地形表面，经过点变换，密度过滤，静态网格体生成就可以得到具体的森林。
 
-![image-20231220155951664](uepics\12.png)
+<img src="uepics\12.png" alt="image-20231220155951664" />
 
 ## 2023/12/27 PCG入门3
 
@@ -88,7 +88,7 @@ CreatePointsGrid用来生成点阵列网格（存在问题，勾选Local和去�
 
 最后依旧是分层过滤密度，此次处理加入了根据密度放缩大小的操作（scale by Density）。
 
-![image-20231226145638508](uepics\13.png)
+<img src="uepics\13.png" alt="image-20231226145638508" />
 
 <center>
     <img src="uepics\15.png" alt="image-20231226150036818" style="zoom:46%;" />
@@ -98,7 +98,7 @@ CreatePointsGrid用来生成点阵列网格（存在问题，勾选Local和去�
 
 样条线最好不要重复。
 
-“复制点”节点参数：![image-20231228155951090](uepics\16.png),“边界修改器”初始可视化数值可写为10。
+“复制点”节点参数：<img src="uepics\16.png" alt="image-20231228155951090" />,“边界修改器”初始可视化数值可写为10。
 
 ## 2023/12/28 PCG入门4
 
@@ -110,11 +110,11 @@ CreatePointsGrid用来生成点阵列网格（存在问题，勾选Local和去�
 
 在actor中添加变量，打开眼睛开关将其暴露出去。在PCG蓝图中使用获取Actor属性来得到对应名字的变量。
 
-![image-20231228162113827](uepics\17.png)
+<img src="uepics\17.png" alt="image-20231228162113827" />
 
 这里需要去掉勾选“始终重新查询Actors”以免每次参数变化后actor id都会改变导致不正确的生成和蓝图报错。
 
-![image-20231228162214020](uepics\18.png)
+<img src="uepics\18.png" alt="image-20231228162214020" />
 
 ## UE4/5 Niagara粒子系统特效
 
@@ -134,89 +134,89 @@ CreatePointsGrid用来生成点阵列网格（存在问题，勾选Local和去�
 
 一瞬间Burst500个粒子，并作为烟雾发射器的源。
 
-![image-20240412114757339](uepics\19.png)
+<img src="uepics\19.png" alt="image-20240412114757339" />
 
 设置粒子颜色，生命周期和大小。
 
-![image-20240412132914314](uepics\20.png)
+<img src="uepics\20.png" alt="image-20240412132914314" />
 
 设置粒子分布：sphere location
 
-![image-20240412133046879](uepics\21.png)
+<img src="uepics\21.png" alt="image-20240412133046879" />
 
 使用点模式的粒子发射：
 
-![image-20240412133142517](uepics\22.png)
+<img src="uepics\22.png" alt="image-20240412133142517" />
 
 添加-500的gravity force使粒子降落，添加Vector Noise Force和Curl Noise Force增加粒子的乱流，添加粒子大小衰减，使用二次曲线。
 
-![image-20240412133324684](uepics\23.png)
+<img src="uepics\23.png" alt="image-20240412133324684" />
 
 最后加上碰撞。减少弹射，增加摩擦。
 
-![image-20240412133428303](uepics\24.png)
+<img src="uepics\24.png" alt="image-20240412133428303" />
 
 自制粒子材质，自发光增至500。
 
-![image-20240412133559024](uepics\25.png)
+<img src="uepics\25.png" alt="image-20240412133559024" />
 
 流体发射器部分：
 
-![image-20240412133723350](uepics\26.png)
+<img src="uepics\26.png" alt="image-20240412133723350" />
 
-![image-20240412133802750](uepics\27.png)
+<img src="uepics\27.png" alt="image-20240412133802750" />
 
 去掉开放-z方向，使其与地面发生碰撞。
 
-![image-20240412133847682](uepics\28.png)
+<img src="uepics\28.png" alt="image-20240412133847682" />
 
 重写烟雾颜色：
 
-![image-20240412133918014](uepics\29.png)
+<img src="uepics\29.png" alt="image-20240412133918014" />
 
 爆炸后产生的乱流粒子，可以直接复制上面的发射器，修改参数如下即可。
 
-![image-20240412134040444](uepics\30.png)
+<img src="uepics\30.png" alt="image-20240412134040444" />
 
-![image-20240412134105259](uepics\31.png)
+<img src="uepics\31.png" alt="image-20240412134105259" />
 
-![image-20240412134124973](uepics\35.png)
+<img src="uepics\35.png" alt="image-20240412134124973" />
 
-![image-20240412134133219](uepics\34.png)
+<img src="uepics\34.png" alt="image-20240412134133219" />
 
-![image-20240412134142091](uepics\33.png)
+<img src="uepics\33.png" alt="image-20240412134142091" />
 
-![image-20240412134148905](uepics\32.png)
+<img src="uepics\32.png" alt="image-20240412134148905" />
 
 蓄力效果：
 
-![image-20240412134832012](uepics\36.png)
+<img src="uepics\36.png" alt="image-20240412134832012" />
 
-![image-20240412134907757](uepics\37.png)
+<img src="uepics\37.png" alt="image-20240412134907757" />
 
 爆炸及火花效果：
 
-![image-20240412135010317](uepics\38.png)
+<img src="uepics\38.png" alt="image-20240412135010317" />
 
 ### 2024/4/12 Fluid 传送门
 
-![image-20240412142137979](uepics\39.png)
+<img src="uepics\39.png" alt="image-20240412142137979" />
 
 核心实现：Vortex Force
 
-![image-20240412142241068](uepics\40.png)
+<img src="uepics\40.png" alt="image-20240412142241068" />
 
 ### 2024/4/14 Fluid龙卷风
 
-![image-20240414103531169](uepics\41.png)
+<img src="uepics\41.png" alt="image-20240414103531169" />
 
 shape Location决定龙卷风形状，涡流速度提供旋转，与烟雾发射器结合。
 
-![image-20240414103642014](uepics\42.png)
+<img src="uepics\42.png" alt="image-20240414103642014" />
 
-![image-20240414103717013](uepics\43.png)
+<img src="uepics\43.png" alt="image-20240414103717013" />
 
-![image-20240414103801862](uepics\44.png)
+<img src="uepics\44.png" alt="image-20240414103801862" />
 
 ## Niagara SPH流体模拟
 
@@ -234,7 +234,7 @@ shape Location决定龙卷风形状，涡流速度提供旋转，与烟雾发射
 
 **Neighbor Grid 3D 相邻网格**：
 
-![image-20240429123759855](uepics\45.png)
+<img src="uepics\45.png" alt="image-20240429123759855" />
 
 包括每个单元格最大查询邻居数量，每个轴上有多少单元格。
 
@@ -653,4 +653,4 @@ OutVelocity = Velocity;  // cm
 #endif // GPU_SIMULATION
 ```
 
-![sphwater](uepics\sphwater.gif)
+<img src="uepics\sphwater.gif" alt="sphwater.gif" />
